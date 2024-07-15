@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Voter</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #121212;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .input-box {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            color: #fff;
+            outline: none;
+            width: 100%;
+        }
+        .input-box::placeholder {
+            color: #999;
+        }
+        .submit-button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0070e0;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+        .submit-button:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Voter</h1>
+        <form action="/submit_voter" method="post">
+            <label for="aadhar_no">Enter voter aadhar no:</label>
+            <input type="text" id="aadhar_no" name="aadhar_no" class="input-box" placeholder="Enter voter aadhar no" required>
+
+            <label for="voter_id">Enter voter id:</label>
+            <input type="text" id="voter_id" name="voter_id" class="input-box" placeholder="Enter voter id" required>
+
+            <label for="dob">Enter voter date of birth (YYYY-MM-DD):</label>
+            <input type="text" id="dob" name="dob" class="input-box" placeholder="Enter voter date of birth" required>
+
+            <label for="address">Enter voter street address:</label>
+            <input type="text" id="address" name="address" class="input-box" placeholder="Enter voter street address" required>
+
+            <label for="gender">Enter gender(M/F):</label>
+            <input type="text" id="gender" name="gender" class="input-box" placeholder="Enter gender" required>
+
+            <label for="nationality">Enter nationality:</label>
+            <input type="text" id="nationality" name="nationality" class="input-box" placeholder="Enter nationality" required>
+
+            <label for="income">Enter annual income:</label>
+            <input type="text" id="income" name="income" class="input-box" placeholder="Enter annual income" required>
+
+            <label for="education">Enter education:</label>
+            <input type="text" id="education" name="education" class="input-box" placeholder="Enter education" required>
+
+            <label for="state">Enter state:</label>
+            <input type="text" id="state" name="state" class="input-box" placeholder="Enter state" required>
+
+            <label for="city">Enter city:</label>
+            <input type="text" id="city" name="city" class="input-box" placeholder="Enter city" required>
+
+            <label for="pincode">Enter pincode:</label>
+            <input type="text" id="pincode" name="pincode" class="input-box" placeholder="Enter pincode" required>
+
+            <label for="voter_name">Enter voter name:</label>
+            <input type="text" id="voter_name" name="voter_name" class="input-box" placeholder="Enter voter name" required>
+
+            <label for="constituency-id">Enter voter constituency :</label>
+            <input type="text" id="constituency_id" name="constituency_id" class="input-box" placeholder="Enter voter constituency id" required>
+
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>

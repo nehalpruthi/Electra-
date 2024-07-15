@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0070e0;
+            margin-bottom: 30px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        .options li {
+            margin-bottom: 20px;
+        }
+        .options li label {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .options li input[type="submit"] {
+            background-color: #0070e0;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            outline: none;
+            width: 100%;
+            max-width: 400px; /* Adjusted width */
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            text-align: center;
+        }
+        .options li input[type="submit"]:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analytics</h1>
+        <ul class="options">
+            <li>
+                <label for="option1">1. Get total number of polling booth available for election</label>
+                <form action="/get_total_polling_booths" method="GET">
+                    <input type="submit" value="Get Total Polling Booths" id="option1">
+                </form>
+            </li>
+            <li>
+                <label for="option2">2. Get maximum number of votes registered by a party in a constituency</label>
+                <form action="/get_max_votes_in_constituency" method="GET">
+                    <input type="submit" value="Get Max Votes in Constituency" id="option2">
+                </form>
+            </li>
+            <li>
+                <label for="option3">3. Get constituency which consumes least amount of resources</label>
+                <form action="/get_least_resource_consuming_constituency" method="GET">
+                    <input type="submit" value="Get Least Resource Consuming Constituency" id="option3">
+                </form>
+            </li>
+            <li>
+                <label for="option4">4. Get average votes per polling booth in a constituency</label>
+                <form action="/get_average_votes_per_booth" method="GET">
+                    <input type="submit" value="Get Average Votes Per Booth" id="option4">
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

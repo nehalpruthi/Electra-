@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Database Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0070e0;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #444;
+            color: #fff;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #0070e0;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MySQL Database Access</h1>
+        <form action="/submit" method="post" id="mysqlForm"> <!-- Changed action and method -->
+            <label for="username">MySQL Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">MySQL Password:</label>
+            <input type="password" id="password" name="password">
+
+            <input type="submit" value="Connect to Database">
+        </form>
+    </div>
+    <script>
+        // Submit form on Enter key press
+        document.getElementById("password").addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("mysqlForm").submit();
+            }
+        });
+    </script>
+</body>
+</html>

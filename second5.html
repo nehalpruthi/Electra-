@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Retrieval</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #0070e0;
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        .options li {
+            margin-bottom: 20px;
+        }
+        .options li label {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .options li input[type="submit"] {
+            background-color: #0070e0;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            outline: none;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            text-align: center;
+        }
+        .options li input[type="submit"]:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Retrieval</h1>
+        <ul class="options">
+            <li>
+                <label for="entity1">1. Details of citizens whose Gender is Male </label>
+                <form action="/get_citizens_details" method="GET" id="citizensForm">
+                    <input type="submit" value="Retrieve Citizen Details" id="entity1">
+                </form>
+            </li>
+            <li>
+                <label for="entity2">2. Details of an employee who works in some department of Election Commission</label>
+                <form action="/get_employee_details" method="GET" id="employeeForm">
+                    <input type="submit" value="Retrieve Employee Details" id="entity2">
+                </form>
+            </li>
+            <li>
+                <label for="entity3">3. EVM Machines of a particular constituency</label>
+                <form action="/get_evm_machine_details" method="GET" id="evmForm">
+                    <input type="submit" value="Retrieve EVM Machine Details" id="entity3">
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

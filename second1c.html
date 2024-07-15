@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Political Party</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #121212;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .input-box {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            color: #fff;
+            outline: none;
+            width: 100%;
+        }
+        .input-box::placeholder {
+            color: #999;
+        }
+        .submit-button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0070e0;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+        .submit-button:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Political Party</h1>
+        <form action="/submit_party" method="post">
+            <label for="party_id">Enter party id:</label>
+            <input type="text" id="party_id" name="party_id" class="input-box" placeholder="Enter party id" required>
+
+            <label for="party_name">Enter party name:</label>
+            <input type="text" id="party_name" name="party_name" class="input-box" placeholder="Enter party name" required>
+
+            <label for="president">Enter president:</label>
+            <input type="text" id="president" name="president" class="input-box" placeholder="Enter president" required>
+
+            <label for="hq">Enter headquarters:</label>
+            <input type="text" id="hq" name="hq" class="input-box" placeholder="Enter headquarters" required>
+
+            <label for="party_symbol">Enter party symbol:</label>
+            <input type="text" id="party_symbol" name="party_symbol" class="input-box" placeholder="Enter party symbol" required>
+
+            <label for="total_members">Enter total members:</label>
+            <input type="text" id="total_members" name="total_members" class="input-box" placeholder="Enter total members" required>
+
+            <label for="seats_contested">Enter seats contested:</label>
+            <input type="text" id="seats_contested" name="seats_contested" class="input-box" placeholder="Enter seats contested" required>
+
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>

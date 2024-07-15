@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Voter Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0070e0;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #444;
+            color: #fff;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #0070e0;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            outline: none;
+            align-self: center;
+            width: 50%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0055b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Update Voter Details</h1>
+        <form action="/update_voter_details" method="post">
+            <label for="voter_id">Voter ID:</label>
+            <input type="text" id="voter_id" name="voter_id" required>
+
+            <label for="num_attributes">Number of Attributes to Update:</label>
+            <input type="text" id="num_attributes" name="num_attributes" required>
+
+            <div id="attribute_fields"></div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('num_attributes').addEventListener('change', function() {
+            var numAttributes = parseInt(this.value);
+            var attributeFields = '';
+
+            for (var i = 1; i <= numAttributes; i++) {
+                attributeFields += '<label for="attribute_name_' + i + '">Attribute Name ' + i + ':</label>';
+                attributeFields += '<input type="text" id="attribute_name_' + i + '" name="attribute_name_' + i + '" required>';
+                attributeFields += '<label for="attribute_value_' + i + '">New Value ' + i + ':</label>';
+                attributeFields += '<input type="text" id="attribute_value_' + i + '" name="attribute_value_' + i + '" required>';
+            }
+
+            document.getElementById('attribute_fields').innerHTML = attributeFields;
+        });
+    </script>
+</body>
+</html>
